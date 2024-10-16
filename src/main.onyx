@@ -1,6 +1,8 @@
 #load "./../lib/packages"
 #load "./protos/proto"
 
+#wasm_section "onyx-command-description" "protoc plugin for Onyx"
+
 use core {*}
 use protobuf
 use protobuf.google.protobuf {
