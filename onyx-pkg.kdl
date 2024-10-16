@@ -1,0 +1,24 @@
+package {
+    name "protoc-gen-onyx" 
+    author "Brendan Hansen" 
+    url "https://github.com/onyx-lang/proto-gen-onyx" 
+    description "A Protobuf plugin for generating Onyx code." 
+    version "0.0.1" 
+}
+
+config {
+    dependency_source_path "./lib" 
+    dependency_binary_path "./bin" 
+}
+
+dependencies {
+    protobuf "0.0.2" git="http://github.com/onyx-lang/pkg-protobuf" 
+}
+
+build {
+    default {
+        target "protoc.wasm" 
+        source "src/main" 
+    }
+}
+
