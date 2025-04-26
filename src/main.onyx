@@ -51,7 +51,8 @@ generate_file :: (file: &FileDescriptorProto) -> CodeGeneratorResponse.File {
     content := make(dyn_str)
 
     content->append(tprintf("package protobuf.{}\n\n", file.package_ ?? "default"))
-    content->append("use protobuf\n\n")
+    content->append("use core.encoding.protobuf\n")
+    content->append("use protobuf { __ROOT_PROTOBUF_PACKAGE :: package }\n\n")
 
     for& msg in file.message_type {
         output_message_type(&content, msg, "", file.syntax ?? "proto2")
@@ -114,10 +115,10 @@ output_message_type :: (content: &dyn_str, msg: &DescriptorProto, parent_type: s
             case .TYPE_BOOL  => "bool"
             case .TYPE_STRING  => "str"
             case .TYPE_GROUP  => "oh_no_group_is_not_supported"
-            case .TYPE_MESSAGE  => tprintf("protobuf{}", field.type_name!)
+            case .TYPE_MESSAGE  => tprintf("__ROOT_PROTOBUF_PACKAGE{}", field.type_name!)
             case .TYPE_BYTES  => "[] u8"
             case .TYPE_UINT32  => "u32"
-            case .TYPE_ENUM  => tprintf("protobuf{}", field.type_name!)
+            case .TYPE_ENUM  => tprintf("__ROOT_PROTOBUF_PACKAGE{}", field.type_name!)
             case .TYPE_SFIXED32  => "i32"
             case .TYPE_SFIXED64  => "i64"
             case .TYPE_SINT32  => "i32"
