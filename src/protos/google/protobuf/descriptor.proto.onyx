@@ -1,11 +1,12 @@
 package protobuf.google.protobuf
 
-use protobuf
+use core.encoding.protobuf
+use protobuf { __ROOT_PROTOBUF_PACKAGE :: package }
 
 @protobuf.Message
 FileDescriptorSet :: struct {
     @protobuf.Field.{1, 11}
-    file: [..] protobuf.google.protobuf.FileDescriptorProto
+    file: [..] __ROOT_PROTOBUF_PACKAGE.google.protobuf.FileDescriptorProto
 }
 
 @protobuf.Message
@@ -21,21 +22,21 @@ FileDescriptorProto :: struct {
     @protobuf.Field.{11, 5}
     weak_dependency: [..] i32
     @protobuf.Field.{4, 11}
-    message_type: [..] protobuf.google.protobuf.DescriptorProto
+    message_type: [..] __ROOT_PROTOBUF_PACKAGE.google.protobuf.DescriptorProto
     @protobuf.Field.{5, 11}
-    enum_type: [..] protobuf.google.protobuf.EnumDescriptorProto
+    enum_type: [..] __ROOT_PROTOBUF_PACKAGE.google.protobuf.EnumDescriptorProto
     @protobuf.Field.{6, 11}
-    service: [..] protobuf.google.protobuf.ServiceDescriptorProto
+    service: [..] __ROOT_PROTOBUF_PACKAGE.google.protobuf.ServiceDescriptorProto
     @protobuf.Field.{7, 11}
-    extension: [..] protobuf.google.protobuf.FieldDescriptorProto
+    extension: [..] __ROOT_PROTOBUF_PACKAGE.google.protobuf.FieldDescriptorProto
     @protobuf.Field.{8, 11}
-    options: ? protobuf.google.protobuf.FileOptions
+    options: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.FileOptions
     @protobuf.Field.{9, 11}
-    source_code_info: ? protobuf.google.protobuf.SourceCodeInfo
+    source_code_info: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.SourceCodeInfo
     @protobuf.Field.{12, 9}
     syntax: ? str
     @protobuf.Field.{14, 14}
-    edition: ? protobuf.google.protobuf.Edition
+    edition: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.Edition
 }
 
 @protobuf.Message
@@ -43,21 +44,21 @@ DescriptorProto :: struct {
     @protobuf.Field.{1, 9}
     name: ? str
     @protobuf.Field.{2, 11}
-    field: [..] protobuf.google.protobuf.FieldDescriptorProto
+    field: [..] __ROOT_PROTOBUF_PACKAGE.google.protobuf.FieldDescriptorProto
     @protobuf.Field.{6, 11}
-    extension: [..] protobuf.google.protobuf.FieldDescriptorProto
+    extension: [..] __ROOT_PROTOBUF_PACKAGE.google.protobuf.FieldDescriptorProto
     @protobuf.Field.{3, 11}
-    nested_type: [..] protobuf.google.protobuf.DescriptorProto
+    nested_type: [..] __ROOT_PROTOBUF_PACKAGE.google.protobuf.DescriptorProto
     @protobuf.Field.{4, 11}
-    enum_type: [..] protobuf.google.protobuf.EnumDescriptorProto
+    enum_type: [..] __ROOT_PROTOBUF_PACKAGE.google.protobuf.EnumDescriptorProto
     @protobuf.Field.{5, 11}
-    extension_range: [..] protobuf.google.protobuf.DescriptorProto.ExtensionRange
+    extension_range: [..] __ROOT_PROTOBUF_PACKAGE.google.protobuf.DescriptorProto.ExtensionRange
     @protobuf.Field.{8, 11}
-    oneof_decl: [..] protobuf.google.protobuf.OneofDescriptorProto
+    oneof_decl: [..] __ROOT_PROTOBUF_PACKAGE.google.protobuf.OneofDescriptorProto
     @protobuf.Field.{7, 11}
-    options: ? protobuf.google.protobuf.MessageOptions
+    options: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.MessageOptions
     @protobuf.Field.{9, 11}
-    reserved_range: [..] protobuf.google.protobuf.DescriptorProto.ReservedRange
+    reserved_range: [..] __ROOT_PROTOBUF_PACKAGE.google.protobuf.DescriptorProto.ReservedRange
     @protobuf.Field.{10, 9}
     reserved_name: [..] str
 }
@@ -69,7 +70,7 @@ DescriptorProto.ExtensionRange :: struct {
     @protobuf.Field.{2, 5}
     end: ? i32
     @protobuf.Field.{3, 11}
-    options: ? protobuf.google.protobuf.ExtensionRangeOptions
+    options: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.ExtensionRangeOptions
 }
 
 @protobuf.Message
@@ -83,13 +84,13 @@ DescriptorProto.ReservedRange :: struct {
 @protobuf.Message
 ExtensionRangeOptions :: struct {
     @protobuf.Field.{999, 11}
-    uninterpreted_option: [..] protobuf.google.protobuf.UninterpretedOption
+    uninterpreted_option: [..] __ROOT_PROTOBUF_PACKAGE.google.protobuf.UninterpretedOption
     @protobuf.Field.{2, 11}
-    declaration: [..] protobuf.google.protobuf.ExtensionRangeOptions.Declaration
+    declaration: [..] __ROOT_PROTOBUF_PACKAGE.google.protobuf.ExtensionRangeOptions.Declaration
     @protobuf.Field.{50, 11}
-    features: ? protobuf.google.protobuf.FeatureSet
+    features: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.FeatureSet
     @protobuf.Field.{3, 14}
-    verification: ? protobuf.google.protobuf.ExtensionRangeOptions.VerificationState
+    verification: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.ExtensionRangeOptions.VerificationState
 }
 
 @protobuf.Message
@@ -118,9 +119,9 @@ FieldDescriptorProto :: struct {
     @protobuf.Field.{3, 5}
     number: ? i32
     @protobuf.Field.{4, 14}
-    label: ? protobuf.google.protobuf.FieldDescriptorProto.Label
+    label: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.FieldDescriptorProto.Label
     @protobuf.Field.{5, 14}
-    type: ? protobuf.google.protobuf.FieldDescriptorProto.Type
+    type: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.FieldDescriptorProto.Type
     @protobuf.Field.{6, 9}
     type_name: ? str
     @protobuf.Field.{2, 9}
@@ -132,7 +133,7 @@ FieldDescriptorProto :: struct {
     @protobuf.Field.{10, 9}
     json_name: ? str
     @protobuf.Field.{8, 11}
-    options: ? protobuf.google.protobuf.FieldOptions
+    options: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.FieldOptions
     @protobuf.Field.{17, 8}
     proto3_optional: ? bool
 }
@@ -169,7 +170,7 @@ OneofDescriptorProto :: struct {
     @protobuf.Field.{1, 9}
     name: ? str
     @protobuf.Field.{2, 11}
-    options: ? protobuf.google.protobuf.OneofOptions
+    options: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.OneofOptions
 }
 
 @protobuf.Message
@@ -177,11 +178,11 @@ EnumDescriptorProto :: struct {
     @protobuf.Field.{1, 9}
     name: ? str
     @protobuf.Field.{2, 11}
-    value: [..] protobuf.google.protobuf.EnumValueDescriptorProto
+    value: [..] __ROOT_PROTOBUF_PACKAGE.google.protobuf.EnumValueDescriptorProto
     @protobuf.Field.{3, 11}
-    options: ? protobuf.google.protobuf.EnumOptions
+    options: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.EnumOptions
     @protobuf.Field.{4, 11}
-    reserved_range: [..] protobuf.google.protobuf.EnumDescriptorProto.EnumReservedRange
+    reserved_range: [..] __ROOT_PROTOBUF_PACKAGE.google.protobuf.EnumDescriptorProto.EnumReservedRange
     @protobuf.Field.{5, 9}
     reserved_name: [..] str
 }
@@ -201,7 +202,7 @@ EnumValueDescriptorProto :: struct {
     @protobuf.Field.{2, 5}
     number: ? i32
     @protobuf.Field.{3, 11}
-    options: ? protobuf.google.protobuf.EnumValueOptions
+    options: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.EnumValueOptions
 }
 
 @protobuf.Message
@@ -209,9 +210,9 @@ ServiceDescriptorProto :: struct {
     @protobuf.Field.{1, 9}
     name: ? str
     @protobuf.Field.{2, 11}
-    method: [..] protobuf.google.protobuf.MethodDescriptorProto
+    method: [..] __ROOT_PROTOBUF_PACKAGE.google.protobuf.MethodDescriptorProto
     @protobuf.Field.{3, 11}
-    options: ? protobuf.google.protobuf.ServiceOptions
+    options: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.ServiceOptions
 }
 
 @protobuf.Message
@@ -223,7 +224,7 @@ MethodDescriptorProto :: struct {
     @protobuf.Field.{3, 9}
     output_type: ? str
     @protobuf.Field.{4, 11}
-    options: ? protobuf.google.protobuf.MethodOptions
+    options: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.MethodOptions
     @protobuf.Field.{5, 8}
     client_streaming: ? bool
     @protobuf.Field.{6, 8}
@@ -243,7 +244,7 @@ FileOptions :: struct {
     @protobuf.Field.{27, 8}
     java_string_check_utf8: ? bool
     @protobuf.Field.{9, 14}
-    optimize_for: ? protobuf.google.protobuf.FileOptions.OptimizeMode
+    optimize_for: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.FileOptions.OptimizeMode
     @protobuf.Field.{11, 9}
     go_package: ? str
     @protobuf.Field.{16, 8}
@@ -271,9 +272,9 @@ FileOptions :: struct {
     @protobuf.Field.{45, 9}
     ruby_package: ? str
     @protobuf.Field.{50, 11}
-    features: ? protobuf.google.protobuf.FeatureSet
+    features: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.FeatureSet
     @protobuf.Field.{999, 11}
-    uninterpreted_option: [..] protobuf.google.protobuf.UninterpretedOption
+    uninterpreted_option: [..] __ROOT_PROTOBUF_PACKAGE.google.protobuf.UninterpretedOption
 }
 
 FileOptions.OptimizeMode :: enum {
@@ -295,19 +296,19 @@ MessageOptions :: struct {
     @protobuf.Field.{11, 8}
     deprecated_legacy_json_field_conflicts: ? bool  // deprecated
     @protobuf.Field.{12, 11}
-    features: ? protobuf.google.protobuf.FeatureSet
+    features: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.FeatureSet
     @protobuf.Field.{999, 11}
-    uninterpreted_option: [..] protobuf.google.protobuf.UninterpretedOption
+    uninterpreted_option: [..] __ROOT_PROTOBUF_PACKAGE.google.protobuf.UninterpretedOption
 }
 
 @protobuf.Message
 FieldOptions :: struct {
     @protobuf.Field.{1, 14}
-    ctype: ? protobuf.google.protobuf.FieldOptions.CType
+    ctype: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.FieldOptions.CType
     @protobuf.Field.{2, 8}
     packed: ? bool
     @protobuf.Field.{6, 14}
-    jstype: ? protobuf.google.protobuf.FieldOptions.JSType
+    jstype: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.FieldOptions.JSType
     @protobuf.Field.{5, 8}
     lazy: ? bool
     @protobuf.Field.{15, 8}
@@ -319,23 +320,23 @@ FieldOptions :: struct {
     @protobuf.Field.{16, 8}
     debug_redact: ? bool
     @protobuf.Field.{17, 14}
-    retention: ? protobuf.google.protobuf.FieldOptions.OptionRetention
+    retention: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.FieldOptions.OptionRetention
     @protobuf.Field.{19, 14}
-    targets: [..] protobuf.google.protobuf.FieldOptions.OptionTargetType
+    targets: [..] __ROOT_PROTOBUF_PACKAGE.google.protobuf.FieldOptions.OptionTargetType
     @protobuf.Field.{20, 11}
-    edition_defaults: [..] protobuf.google.protobuf.FieldOptions.EditionDefault
+    edition_defaults: [..] __ROOT_PROTOBUF_PACKAGE.google.protobuf.FieldOptions.EditionDefault
     @protobuf.Field.{21, 11}
-    features: ? protobuf.google.protobuf.FeatureSet
+    features: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.FeatureSet
     @protobuf.Field.{22, 11}
-    feature_support: ? protobuf.google.protobuf.FieldOptions.FeatureSupport
+    feature_support: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.FieldOptions.FeatureSupport
     @protobuf.Field.{999, 11}
-    uninterpreted_option: [..] protobuf.google.protobuf.UninterpretedOption
+    uninterpreted_option: [..] __ROOT_PROTOBUF_PACKAGE.google.protobuf.UninterpretedOption
 }
 
 @protobuf.Message
 FieldOptions.EditionDefault :: struct {
     @protobuf.Field.{3, 14}
-    edition: ? protobuf.google.protobuf.Edition
+    edition: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.Edition
     @protobuf.Field.{2, 9}
     value: ? str
 }
@@ -343,13 +344,13 @@ FieldOptions.EditionDefault :: struct {
 @protobuf.Message
 FieldOptions.FeatureSupport :: struct {
     @protobuf.Field.{1, 14}
-    edition_introduced: ? protobuf.google.protobuf.Edition
+    edition_introduced: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.Edition
     @protobuf.Field.{2, 14}
-    edition_deprecated: ? protobuf.google.protobuf.Edition
+    edition_deprecated: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.Edition
     @protobuf.Field.{3, 9}
     deprecation_warning: ? str
     @protobuf.Field.{4, 14}
-    edition_removed: ? protobuf.google.protobuf.Edition
+    edition_removed: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.Edition
 }
 
 FieldOptions.CType :: enum {
@@ -386,9 +387,9 @@ FieldOptions.OptionTargetType :: enum {
 @protobuf.Message
 OneofOptions :: struct {
     @protobuf.Field.{1, 11}
-    features: ? protobuf.google.protobuf.FeatureSet
+    features: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.FeatureSet
     @protobuf.Field.{999, 11}
-    uninterpreted_option: [..] protobuf.google.protobuf.UninterpretedOption
+    uninterpreted_option: [..] __ROOT_PROTOBUF_PACKAGE.google.protobuf.UninterpretedOption
 }
 
 @protobuf.Message
@@ -400,9 +401,9 @@ EnumOptions :: struct {
     @protobuf.Field.{6, 8}
     deprecated_legacy_json_field_conflicts: ? bool  // deprecated
     @protobuf.Field.{7, 11}
-    features: ? protobuf.google.protobuf.FeatureSet
+    features: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.FeatureSet
     @protobuf.Field.{999, 11}
-    uninterpreted_option: [..] protobuf.google.protobuf.UninterpretedOption
+    uninterpreted_option: [..] __ROOT_PROTOBUF_PACKAGE.google.protobuf.UninterpretedOption
 }
 
 @protobuf.Message
@@ -410,23 +411,23 @@ EnumValueOptions :: struct {
     @protobuf.Field.{1, 8}
     deprecated: ? bool
     @protobuf.Field.{2, 11}
-    features: ? protobuf.google.protobuf.FeatureSet
+    features: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.FeatureSet
     @protobuf.Field.{3, 8}
     debug_redact: ? bool
     @protobuf.Field.{4, 11}
-    feature_support: ? protobuf.google.protobuf.FieldOptions.FeatureSupport
+    feature_support: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.FieldOptions.FeatureSupport
     @protobuf.Field.{999, 11}
-    uninterpreted_option: [..] protobuf.google.protobuf.UninterpretedOption
+    uninterpreted_option: [..] __ROOT_PROTOBUF_PACKAGE.google.protobuf.UninterpretedOption
 }
 
 @protobuf.Message
 ServiceOptions :: struct {
     @protobuf.Field.{34, 11}
-    features: ? protobuf.google.protobuf.FeatureSet
+    features: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.FeatureSet
     @protobuf.Field.{33, 8}
     deprecated: ? bool
     @protobuf.Field.{999, 11}
-    uninterpreted_option: [..] protobuf.google.protobuf.UninterpretedOption
+    uninterpreted_option: [..] __ROOT_PROTOBUF_PACKAGE.google.protobuf.UninterpretedOption
 }
 
 @protobuf.Message
@@ -434,11 +435,11 @@ MethodOptions :: struct {
     @protobuf.Field.{33, 8}
     deprecated: ? bool
     @protobuf.Field.{34, 14}
-    idempotency_level: ? protobuf.google.protobuf.MethodOptions.IdempotencyLevel
+    idempotency_level: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.MethodOptions.IdempotencyLevel
     @protobuf.Field.{35, 11}
-    features: ? protobuf.google.protobuf.FeatureSet
+    features: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.FeatureSet
     @protobuf.Field.{999, 11}
-    uninterpreted_option: [..] protobuf.google.protobuf.UninterpretedOption
+    uninterpreted_option: [..] __ROOT_PROTOBUF_PACKAGE.google.protobuf.UninterpretedOption
 }
 
 MethodOptions.IdempotencyLevel :: enum {
@@ -450,7 +451,7 @@ MethodOptions.IdempotencyLevel :: enum {
 @protobuf.Message
 UninterpretedOption :: struct {
     @protobuf.Field.{2, 11}
-    name: [..] protobuf.google.protobuf.UninterpretedOption.NamePart
+    name: [..] __ROOT_PROTOBUF_PACKAGE.google.protobuf.UninterpretedOption.NamePart
     @protobuf.Field.{3, 9}
     identifier_value: ? str
     @protobuf.Field.{4, 4}
@@ -476,17 +477,17 @@ UninterpretedOption.NamePart :: struct {
 @protobuf.Message
 FeatureSet :: struct {
     @protobuf.Field.{1, 14}
-    field_presence: ? protobuf.google.protobuf.FeatureSet.FieldPresence
+    field_presence: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.FeatureSet.FieldPresence
     @protobuf.Field.{2, 14}
-    enum_type: ? protobuf.google.protobuf.FeatureSet.EnumType
+    enum_type: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.FeatureSet.EnumType
     @protobuf.Field.{3, 14}
-    repeated_field_encoding: ? protobuf.google.protobuf.FeatureSet.RepeatedFieldEncoding
+    repeated_field_encoding: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.FeatureSet.RepeatedFieldEncoding
     @protobuf.Field.{4, 14}
-    utf8_validation: ? protobuf.google.protobuf.FeatureSet.Utf8Validation
+    utf8_validation: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.FeatureSet.Utf8Validation
     @protobuf.Field.{5, 14}
-    message_encoding: ? protobuf.google.protobuf.FeatureSet.MessageEncoding
+    message_encoding: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.FeatureSet.MessageEncoding
     @protobuf.Field.{6, 14}
-    json_format: ? protobuf.google.protobuf.FeatureSet.JsonFormat
+    json_format: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.FeatureSet.JsonFormat
 }
 
 FeatureSet.FieldPresence :: enum {
@@ -529,27 +530,27 @@ FeatureSet.JsonFormat :: enum {
 @protobuf.Message
 FeatureSetDefaults :: struct {
     @protobuf.Field.{1, 11}
-    defaults: [..] protobuf.google.protobuf.FeatureSetDefaults.FeatureSetEditionDefault
+    defaults: [..] __ROOT_PROTOBUF_PACKAGE.google.protobuf.FeatureSetDefaults.FeatureSetEditionDefault
     @protobuf.Field.{4, 14}
-    minimum_edition: ? protobuf.google.protobuf.Edition
+    minimum_edition: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.Edition
     @protobuf.Field.{5, 14}
-    maximum_edition: ? protobuf.google.protobuf.Edition
+    maximum_edition: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.Edition
 }
 
 @protobuf.Message
 FeatureSetDefaults.FeatureSetEditionDefault :: struct {
     @protobuf.Field.{3, 14}
-    edition: ? protobuf.google.protobuf.Edition
+    edition: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.Edition
     @protobuf.Field.{4, 11}
-    overridable_features: ? protobuf.google.protobuf.FeatureSet
+    overridable_features: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.FeatureSet
     @protobuf.Field.{5, 11}
-    fixed_features: ? protobuf.google.protobuf.FeatureSet
+    fixed_features: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.FeatureSet
 }
 
 @protobuf.Message
 SourceCodeInfo :: struct {
     @protobuf.Field.{1, 11}
-    location: [..] protobuf.google.protobuf.SourceCodeInfo.Location
+    location: [..] __ROOT_PROTOBUF_PACKAGE.google.protobuf.SourceCodeInfo.Location
 }
 
 @protobuf.Message
@@ -569,7 +570,7 @@ SourceCodeInfo.Location :: struct {
 @protobuf.Message
 GeneratedCodeInfo :: struct {
     @protobuf.Field.{1, 11}
-    annotation: [..] protobuf.google.protobuf.GeneratedCodeInfo.Annotation
+    annotation: [..] __ROOT_PROTOBUF_PACKAGE.google.protobuf.GeneratedCodeInfo.Annotation
 }
 
 @protobuf.Message
@@ -583,7 +584,7 @@ GeneratedCodeInfo.Annotation :: struct {
     @protobuf.Field.{4, 5}
     end: ? i32
     @protobuf.Field.{5, 14}
-    semantic: ? protobuf.google.protobuf.GeneratedCodeInfo.Annotation.Semantic
+    semantic: ? __ROOT_PROTOBUF_PACKAGE.google.protobuf.GeneratedCodeInfo.Annotation.Semantic
 }
 
 GeneratedCodeInfo.Annotation.Semantic :: enum {

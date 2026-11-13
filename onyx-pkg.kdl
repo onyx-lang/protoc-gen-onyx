@@ -11,14 +11,17 @@ config {
     dependency_binary_path "./bin" 
 }
 
-dependencies {
-    protobuf "0.0.2" git="http://github.com/onyx-lang/pkg-protobuf" 
-}
-
 build {
     default {
         target "protoc.wasm" 
         source "src/main" 
     }
+}
+
+lsp {
+    mode "project" 
+    source_files "src/main" 
+    include_dirs "" 
+    working_dir "." 
 }
 

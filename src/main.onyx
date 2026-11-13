@@ -1,10 +1,9 @@
-#load "./../lib/packages"
 #load "./protos/proto"
 
 #wasm_section "onyx-command-description" "protoc plugin for Onyx"
 
 use core {*}
-use protobuf
+use core.encoding.protobuf
 use protobuf.google.protobuf {
     FileDescriptorProto
     DescriptorProto
@@ -42,7 +41,7 @@ main :: () {
         file = files
     })!
 
-    io.stream_write(&stdio.stream, response)
+    io.Stream.write(&stdio.stream, response)
 }
 
 generate_file :: (file: &FileDescriptorProto) -> CodeGeneratorResponse.File {
@@ -125,11 +124,11 @@ output_message_type :: (content: &dyn_str, msg: &DescriptorProto, parent_type: s
             case .TYPE_SINT64  => "i64"
         })
 
-        field.options |> .with([o] {
+        if field.options as o {
             if o.deprecated ?? false {
                 content->append("  // deprecated")
             }
-        })
+        }
 
         content->append("\n")
     }
@@ -164,11 +163,11 @@ output_enum_type :: (content: &dyn_str, enum_type: &EnumDescriptorProto, parent_
         content->append(" :: ")
         content->append(tprintf("{}", value.number!))
 
-        value.options |> .with([o] {
+        if value.options as o {
             if o.deprecated ?? false {
                 content->append("  // deprecated")
             }
-        })
+        }
 
         content->append("\n")
     }
